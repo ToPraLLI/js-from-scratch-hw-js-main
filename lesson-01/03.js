@@ -5,4 +5,10 @@
 */
 
 // your code
-let sum
+let sum = 0;
+let number = 1;
+while (number <= 20) {
+      sum += number;
+      number += 2;  // увеличиваем сразу на 2, переходя к следующему нечётному числу
+      }
+      console.log(sum);
