@@ -8,11 +8,17 @@
 */
 
 // тестовые данные (значения можно менять)
-const isAdmin = false
-const isVerifiedUser = true
+const isAdmin = true
+const isVerifiedUser = false
 const hasSpecialPermission = true
 const hasTemporaryPass = false
-
-let isAccess
+let otBet
+let isAccess = otBet;
 
 // your code
+if (otBet = (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)){
+    console.log("Доступ получен");
+} else {
+    console.log("Доступе отказано");
+}
+
