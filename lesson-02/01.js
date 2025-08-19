@@ -12,13 +12,13 @@ const isAdmin = true
 const isVerifiedUser = false
 const hasSpecialPermission = true
 const hasTemporaryPass = false
-let otBet
-let isAccess = otBet;
+
+let isAccess
 
 // your code
-if (otBet = (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)){
-    console.log("Доступ получен");
+if (isAccess = (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)){
+    console.log("Доступ получен" + isAccess);
 } else {
-    console.log("Доступе отказано");
+    console.log("Доступе отказано" + isAccess);
 }
 
