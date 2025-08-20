@@ -1,9 +1,10 @@
 // Напишите функцию calculateAverage, которая принимает 2 числа и возвращает их среднее арифметическое
 
 
-function calculateAverage(numberOne, numberTwo) {
-	const result = (numberOne + numberTwo) / 2;
-	console.log(result);
+function calculateAverage (numberOne, numberTwo) {
+	return (numberOne + numberTwo) / 2;
 	
-}
-calculateAverage(2, 2)
+		
+}console.log(calculateAverage(10, 20));
+
+
