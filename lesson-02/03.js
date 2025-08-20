@@ -4,7 +4,7 @@
  * Результат сохраните в переменной grade.
  */
 
-const score = 80 // тестовое значение, можно изменять
+const score = 101 // тестовое значение, можно изменять
 let grade
 let points = score;
 // your code
@@ -23,6 +23,8 @@ switch(true){
         break;    
         case (score >= 90 && score <= 100): 
         console.log("Ваша оценка: " + (grade = 'A'));        
-        break;              
+        break;
+        default:
+    console.log(`Значение от 0 до 100, вы указал: ${score}.`);              
 }
 
