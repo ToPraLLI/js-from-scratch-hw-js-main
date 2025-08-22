@@ -7,10 +7,10 @@
 function isEven(number) {
 
     let result = Math.floor(number / 2) * 2;
-   
+    //return result === number;
     if (result === number) {
-        return console.log("Число четное");        
+        return console.log(true);        
     } 
     else {
-        return console.log("Число не четное");}
+        return console.log(false);}
 }
