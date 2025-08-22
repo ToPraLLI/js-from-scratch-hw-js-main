@@ -2,15 +2,15 @@
 // Функция должна возвращать true, если число чётное, и false — в противном случае
 
 
- isEven(241)
+ isEven(-2)
 
 function isEven(number) {
 
-    let result = Math.floor(number / 2) * 2;
+   return number === Math.floor(number / 2) * 2;
     //return result === number;
-    if (result === number) {
-        return console.log(true);        
-    } 
-    else {
-        return console.log(false);}
+    // if (result === number) {
+    //     return console.log(true);        
+    // } 
+    // else {
+    //     return console.log(false);}
 }
