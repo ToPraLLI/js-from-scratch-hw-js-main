@@ -3,8 +3,5 @@
 
 function calculateAverage (numberOne, numberTwo) {
 	return (numberOne + numberTwo) / 2;
-	
-		
-}console.log(calculateAverage(10, 20));
-
-
+}
+console.log(calculateAverage(10, 20));
