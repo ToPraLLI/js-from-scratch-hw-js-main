@@ -20,6 +20,3 @@ function doubleEachCharacter(str) {
     }
     return result
 }
-
-
-console.log(doubleEachCharacter('hello'));
