@@ -23,4 +23,8 @@ const oddNumbers = filter(numbers, (element, index) => {
 console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 */
 
-const filter = () => {}
+const items = ['a', 'b', 'c', 'd'];
+const filteredByIndex = filter(items, (element, index) => {
+    return index > 1;
+});
+console.log(filteredByIndex);
