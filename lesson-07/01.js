@@ -18,7 +18,7 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем элементы DOM - используем правильные селекторы из вашего HTML
+    // Получаем элементы DOM - используем правильные селекторы
     const sliderImage = document.getElementById('web-tech-image');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
