@@ -17,31 +17,38 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
-// Получаем элементы DOM
-const sliderImage = document.querySelector('.slider-image');
-const prevButton = document.querySelector('.slider-button.prev');
-const nextButton = document.querySelector('.slider-button.next');
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем элементы DOM - используем правильные селекторы из вашего HTML
+    const sliderImage = document.getElementById('web-tech-image');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
 
-// Текущий индекс изображения
-let currentIndex = 0;
+    // Проверяем, что элементы найдены
+    if (!sliderImage || !prevButton || !nextButton) {
+        console.error('Не найдены необходимые элементы DOM');
+        return;
+    }
 
-// Функция для обновления изображения
-function showImage(index) {
-    currentIndex = index;
-    sliderImage.src = WEB_TECH_IMAGES[currentIndex];
-}
+    // Текущий индекс изображения
+    let currentImageIndex = 0;
 
-// Обработчик для кнопки "next"
-nextButton.addEventListener('click', () => {
-    const nextIndex = currentIndex === WEB_TECH_IMAGES.length - 1 ? 0 : currentIndex + 1;
-    showImage(nextIndex);
+    // Функция для обновления изображения
+    function updateImage() {
+        sliderImage.src = WEB_TECH_IMAGES[currentImageIndex];
+    }
+
+    // Обработчик для кнопки "next"
+    nextButton.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % WEB_TECH_IMAGES.length;
+        updateImage();
+    });
+
+    // Обработчик для кнопки "prev"
+    prevButton.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + WEB_TECH_IMAGES.length) % WEB_TECH_IMAGES.length;
+        updateImage();
+    });
+
+    // Инициализация - показываем первое изображение
+    updateImage();
 });
-
-// Обработчик для кнопки "prev"
-prevButton.addEventListener('click', () => {
-    const prevIndex = currentIndex === 0 ? WEB_TECH_IMAGES.length - 1 : currentIndex - 1;
-    showImage(prevIndex);
-});
-
-// Показываем первое изображение при загрузке
-showImage(0);
