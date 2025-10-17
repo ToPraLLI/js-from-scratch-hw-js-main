@@ -67,4 +67,19 @@ clearCartButton.addEventListener('click', function () {
   updateCartDisplay()
 })
 
-// Твой код:
+// Добавляем обработчик события на контейнер pet-shop
+petShop.addEventListener('click', function(event) {
+  // Проверяем, что клик был по кнопке питомца
+  if (event.target.classList.contains('pet')) {
+    const petId = event.target.id;
+    // Проверяем количество питомцев в корзине
+    if (cart.length >= 3) {
+      messageBox.textContent = 'Вы не можете добавить более 3 питомцев';
+      return;
+    }
+    // Добавляем id питомца в корзину
+    cart.push(petId);
+    // Обновляем отображение корзины
+    updateCartDisplay();
+  }
+});
