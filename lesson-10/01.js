@@ -30,6 +30,12 @@ const model = {
     view.renderMovies(this.movies)
   },
   // your code
+  deleteMovie(id) {
+    // Удаляем фильм из массива по id
+    this.movies = this.movies.filter(movie => movie.id !== id)
+    // Обновляем отображение
+    view.renderMovies(this.movies)
+  }
 }
 
 const view = {
@@ -51,6 +57,15 @@ const view = {
     })
 
     // your code
+    const list = document.querySelector('.list')
+    list.addEventListener('click', function(event) {
+      // Проверяем, что кликнули по кнопке удаления
+      if (event.target.classList.contains('delete-button')) {
+        // Получаем id фильма из родительского элемента li
+        const movieId = event.target.parentElement.id
+        controller.deleteMovie(movieId)
+      }
+    })
   },
   renderMovies(movies) {
     const list = document.querySelector('.list')
@@ -91,6 +106,12 @@ const controller = {
     }
   },
   // your code
+  deleteMovie(id) {
+    // Передаем id фильма в модель для удаления
+    model.deleteMovie(id)
+    // Отображаем сообщение об успешном удалении
+    view.displayMessage('Фильм успешно удалён!')
+  }
 }
 
 function init() {
