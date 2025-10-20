@@ -31,8 +31,9 @@ const model = {
   },
   // your code
   deleteMovie(id) {
+    const movieId = Number(id)
     // Удаляем фильм из массива по id
-    this.movies = this.movies.filter(movie => movie.id !== id)
+    this.movies = this.movies.filter(movie => movie.id !== movieId)
     // Обновляем отображение
     view.renderMovies(this.movies)
   }
